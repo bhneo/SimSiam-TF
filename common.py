@@ -93,6 +93,8 @@ def get_session(args):
     #         except RuntimeError as e:
     #             # Memory growth must be set before GPUs have been initialized
     #             print(e)
+    if args.gpus != -1:
+        os.environ['CUDA_VISIBLE_DEVICES'] = args.gpus
     gpus = tf.config.experimental.list_physical_devices('GPU')
     if gpus:
         try:
