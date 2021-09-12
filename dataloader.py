@@ -57,7 +57,7 @@ class DataLoader:
     def augmentation(self, img, shape):
         if self.task == 'pretext':
             img_list = []
-            for _ in range(2): # query, key
+            for _ in range(2):  # query, key
                 aug_img = tf.identity(img)
                 aug_img = self.augset._augment_simsiam(aug_img, shape)
                 img_list.append(aug_img)

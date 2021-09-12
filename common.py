@@ -82,7 +82,7 @@ def get_logger(name):
 
 def get_session(args):
     assert int(tf.__version__.split('.')[0]) >= 2.0
-    os.environ['CUDA_VISIBLE_DEVICES'] = args.gpus
+    # os.environ['CUDA_VISIBLE_DEVICES'] = args.gpus
     # if args.gpus != '-1':
     #     gpus = tf.config.experimental.list_physical_devices('GPU')
     #     if gpus:
