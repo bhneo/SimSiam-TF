@@ -106,6 +106,8 @@ def train_lincls(args, logger, initial_epoch, strategy, num_workers):
             loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True, name='loss'),
             run_eagerly=False)
 
+        model.summary()
+
 
     ##########################
     # Train
