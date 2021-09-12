@@ -159,7 +159,7 @@ def main():
     ##########################
     # Strategy
     ##########################
-    if len(args.gpus.split(',')) > 1:
+    if len(args.gpus.split(',')) > 1 or args.gpus == '-1':
         # strategy = tf.distribute.experimental.CentralStorageStrategy()
         strategy = tf.distribute.MirroredStrategy()
     else:

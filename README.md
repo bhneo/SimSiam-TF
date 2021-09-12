@@ -7,7 +7,6 @@ This is an unofficial implementation of SimSiam ([Exploring Simple Siamese Repre
 - tensorflow >= 2.2
 
 ## Training
-To train SimSiam,
 ```
 python main.py \
     --task pretext \
@@ -21,6 +20,21 @@ python main.py \
     --lr_mode cosine \
     --data_path /path/of/your/data \
     --gpus gpu id(s) which will be used
+```
+### or 
+```
+python main.py \
+    --task pretext \
+    --stop_gradient \
+    --proj_bn_hidden \
+    --proj_bn_output \
+    --pred_bn_hidden \
+    --weight_decay 0.0001 \
+    --batch_size 256 \
+    --epochs 200 \
+    --lr_mode cosine \
+    --data_path data \
+    --dataset cifar10
 ```
 
 ## Evaluation

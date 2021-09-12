@@ -1,8 +1,6 @@
 import random
-import numpy as np
-import tensorflow as tf
-import tensorflow_addons as tfa
 
+import tensorflow as tf
 
 mean_std = [[0.485, 0.456, 0.406],
             [0.229, 0.224, 0.225]]

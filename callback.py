@@ -1,17 +1,13 @@
 import os
-import six
-import yaml
-import tqdm
+
 import numpy as np
-import pandas as pd
 import tensorflow as tf
+import yaml
+from tensorflow.keras.callbacks import CSVLogger
 from tensorflow.keras.callbacks import Callback
 from tensorflow.keras.callbacks import ModelCheckpoint
-from tensorflow.keras.callbacks import CSVLogger
 from tensorflow.keras.callbacks import TensorBoard
 from tensorflow.keras.experimental import CosineDecay
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import accuracy_score
 
 from common import create_stamp
 
