@@ -35,7 +35,7 @@ python main.py \
     --lr_mode cosine \
     --data_path data \
     --dataset cifar10 \
-    --backbone resnet18 \
+    --backbone resnet20 \
     --img_size 32
 ```
 

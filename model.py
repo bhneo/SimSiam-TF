@@ -9,7 +9,7 @@ from tensorflow.keras import Model
 from tensorflow.keras.regularizers import l2
 from tensorflow.keras.initializers import Constant
 
-from resnet import ResNet18
+from resnet import ResNet18, ResNet20
 from layer import _conv2d
 from layer import _batchnorm
 from layer import _dense
@@ -17,9 +17,11 @@ from layer import _dense
 
 MODEL_DICT = {
     'resnet18' : ResNet18,
+    'resnet20' : ResNet20,
     'resnet50' : tf.keras.applications.ResNet50,}
 FAMILY_DICT = {
     'resnet18' : tf.python.keras.applications.resnet,
+    'resnet20' : tf.python.keras.applications.resnet,
     'resnet50' : tf.python.keras.applications.resnet,}
 
 
