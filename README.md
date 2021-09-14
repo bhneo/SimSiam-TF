@@ -34,7 +34,9 @@ python main.py \
     --epochs 200 \
     --lr_mode cosine \
     --data_path data \
-    --dataset cifar10
+    --dataset cifar10 \
+    --backbone resnet18 \
+    --img_size 32
 ```
 
 ## Evaluation
