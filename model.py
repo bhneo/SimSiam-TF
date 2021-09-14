@@ -59,7 +59,7 @@ class SimSiam(Model):
             weights=None,
             input_shape=(self.args.img_size, self.args.img_size, 3),
             pooling='avg',
-            **DEFAULT_ARGS if self.args.backbone == 'resnet18' else {})
+            **DEFAULT_ARGS if self.args.backbone == 'resnet18' or self.args.backbone == 'resnet20' else {})
         DEFAULT_ARGS.pop('norm')
 
         x = backbone.output
