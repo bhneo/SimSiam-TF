@@ -44,6 +44,8 @@ def train_pretext(args, logger, initial_epoch, strategy, num_workers):
             optimizer=tf.keras.optimizers.SGD(lr_scheduler, momentum=.9),
             loss=tf.keras.losses.cosine_similarity,
             run_eagerly=False)
+        model.build(input_shape=[(None, 32, 32, 3), (None, 32, 32, 3)])
+        model.summary()
 
     train_generator = DataLoader(args, args.task, 'train', trainset, args.batch_size, num_workers).dataloader
 

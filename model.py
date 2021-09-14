@@ -106,6 +106,10 @@ class SimSiam(Model):
 
         self._loss = loss
 
+    def call(self, inputs, training=None, mask=None):
+        img1, img2 = inputs
+        z1, p1 = self.encoder(img1)
+
     def train_step(self, data):
         img1, img2 = data
         with tf.GradientTape() as tape:

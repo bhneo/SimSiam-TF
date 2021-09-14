@@ -16,6 +16,7 @@ def ResNet18(
     input_shape=None,
     pooling=None,
     classes=1000,
+    filters=16,
     **kwargs):
     
     norm = kwargs.pop('norm')
@@ -48,14 +49,14 @@ def ResNet18(
         return x
 
     def stack_fn(x):
-        x = stack0(x, 64, 2, stride1=1, name='conv2')
-        x = stack0(x, 128, 2, name='conv3')
-        x = stack0(x, 256, 2, name='conv4')
-        return stack0(x, 512, 2, name='conv5')
+        x = stack0(x, filters, 2, stride1=1, name='conv2')
+        x = stack0(x, filters*2, 2, name='conv3')
+        x = stack0(x, filters*4, 2, name='conv4')
+        return stack0(x, filters*8, 2, name='conv5')
 
     inputs = Input(shape=input_shape)
     x = ZeroPadding2D(padding=((1, 1), (1, 1)), name='conv1_pad')(inputs)
-    x = _conv2d(**DEFAULT_ARGS)(64, 3, name='conv1_conv')(x)
+    x = _conv2d(**DEFAULT_ARGS)(filters, 3, name='conv1_conv')(x)
     x = _batchnorm(norm=norm)(epsilon=1.001e-5, name='conv1_bn')(x)
     x = Activation('relu', name='conv1_relu')(x)
 
