@@ -31,12 +31,16 @@ python main.py \
     --pred_bn_hidden \
     --weight_decay 0.0001 \
     --batch_size 256 \
-    --epochs 200 \
+    --epochs 100 \
     --lr_mode cosine \
     --data_path data \
     --dataset cifar10 \
-    --backbone resnet20 \
-    --img_size 32
+    --backbone resnet18 \
+    --img_size 32 \
+    --evaluate  \
+    --checkpoint  \
+    --history  \
+    --tb_interval 10
 ```
 
 ## Evaluation
@@ -51,6 +55,20 @@ python main.py \
     --data_path /path/of/your/data \
     --snapshot /path/of/checkpoint \
     --gpus gpu id(s) which will be used
+```
+### or
+```
+python main.py \
+    --task lincls \
+    --batch_size 256 \
+    --epochs 90 \
+    --lr 30 \
+    --lr_mode cosine \
+    --data_path data \
+    --snapshot /path/of/checkpoint \
+    --dataset cifar10 \
+    --backbone resnet20 \
+    --img_size 32
 ```
 
 ## Results
