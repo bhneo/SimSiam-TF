@@ -103,8 +103,9 @@ def train_lincls(args, logger, initial_epoch, strategy, num_workers):
         lr_scheduler = OptionalLearningRateSchedule(args, steps_per_epoch, initial_epoch)
         model.compile(
             optimizer=tf.keras.optimizers.SGD(lr_scheduler, momentum=.9),
-            metrics=[tf.keras.metrics.SparseTopKCategoricalAccuracy(1, 'acc1', dtype=tf.float32),
-                     tf.keras.metrics.SparseTopKCategoricalAccuracy(5, 'acc5', dtype=tf.float32)],
+            # metrics=[tf.keras.metrics.SparseTopKCategoricalAccuracy(1, 'acc1', dtype=tf.float32),
+            #          tf.keras.metrics.SparseTopKCategoricalAccuracy(5, 'acc5', dtype=tf.float32)],
+            metrics=[tf.keras.metrics.SparseCategoricalAccuracy('acc', dtype=tf.float32)],
             loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True, name='loss'),
             run_eagerly=False)
 

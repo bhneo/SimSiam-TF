@@ -62,13 +62,16 @@ python main.py \
     --task lincls \
     --batch_size 256 \
     --epochs 90 \
-    --lr 30 \
     --lr_mode cosine \
     --data_path data \
-    --snapshot /path/of/checkpoint \
+    --snapshot result/pretext/210916_Thu_01_17_39/checkpoint \
     --dataset cifar10 \
-    --backbone resnet20 \
-    --img_size 32
+    --backbone resnet18 \
+    --img_size 32 \
+    --evaluate  \
+    --checkpoint  \
+    --history  \
+    --tb_interval 10
 ```
 
 ## Results
