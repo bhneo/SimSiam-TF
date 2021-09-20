@@ -31,7 +31,7 @@ def get_arguments():
     parser.add_argument("--proj_dim",       type=int,       default=2048)
     parser.add_argument("--proj_bn_hidden", action='store_true')
     parser.add_argument("--proj_bn_output", action='store_true')
-    parser.add_argument("--pred_dim",       type=int,       default=512)
+    parser.add_argument("--pred_dim",       type=int,       default=2048)
     parser.add_argument("--pred_bn_hidden", action='store_true')
     parser.add_argument("--pred_bn_output", action='store_true')
 

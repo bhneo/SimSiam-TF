@@ -29,9 +29,9 @@ python main.py \
     --proj_bn_hidden \
     --proj_bn_output \
     --pred_bn_hidden \
-    --weight_decay 0.0001 \
-    --batch_size 256 \
-    --epochs 100 \
+    --weight_decay 0.0005 \
+    --batch_size 512 \
+    --epochs 800 \
     --lr_mode cosine \
     --data_path data \
     --dataset cifar10 \
@@ -40,7 +40,10 @@ python main.py \
     --evaluate  \
     --checkpoint  \
     --history  \
-    --tb_interval 10
+    --tensorboard \
+    --tb_interval 10 \
+    --tb_histogram 10 \
+    --gpu 0
 ```
 
 ## Evaluation
@@ -60,18 +63,23 @@ python main.py \
 ```
 python main.py \
     --task lincls \
-    --batch_size 256 \
+    --batch_size 512 \
     --epochs 90 \
     --lr_mode cosine \
     --data_path data \
-    --snapshot result/pretext/210916_Thu_01_17_39/checkpoint \
+    --snapshot result/pretext/210918_Sat_16_54_19/checkpoint \
     --dataset cifar10 \
     --backbone resnet18 \
     --img_size 32 \
+    --classes 10 \
     --evaluate  \
     --checkpoint  \
     --history  \
-    --tb_interval 10
+    --tensorboard \
+    --tb_interval 10 \
+    --tb_histogram 10 \
+    --gpu 0 \
+    --freeze
 ```
 
 ## Results
