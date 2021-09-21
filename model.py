@@ -48,6 +48,8 @@ class SimSiam(Model):
         norm = 'bn' if self._num_workers == 1 else 'syncbn'
         
         DEFAULT_ARGS = {
+            "filters": self.args.filters,
+            "classes": self.args.classes,
             "use_bias": self.args.use_bias,
             "kernel_regularizer": l2(self.args.weight_decay)}
         FAMILY_DICT[self.args.backbone].Conv2D = _conv2d(**DEFAULT_ARGS)

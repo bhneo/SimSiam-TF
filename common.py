@@ -25,6 +25,7 @@ def get_arguments():
     parser.add_argument("--freeze",         action='store_true')
     parser.add_argument("--backbone",       type=str,       default='resnet50')
     parser.add_argument("--batch_size",     type=int,       default=256)
+    parser.add_argument("--filters",        type=int,       default=16)
     parser.add_argument("--classes",        type=int,       default=1000)
     parser.add_argument("--pred_layer",     type=str,       default='avg_pool')
     parser.add_argument("--img_size",       type=int,       default=224)

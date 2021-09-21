@@ -37,6 +37,8 @@ python main.py \
     --dataset cifar10 \
     --backbone resnet18 \
     --img_size 32 \
+    --classes 10 \
+    --filters 32 \
     --evaluate  \
     --checkpoint  \
     --history  \

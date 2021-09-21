@@ -15,14 +15,14 @@ def ResNet18(
     include_top=True,
     input_shape=None,
     pooling=None,
-    classes=10,
-    filters=16,
     **kwargs):
     
     norm = kwargs.pop('norm')
     DEFAULT_ARGS = {
         'use_bias': kwargs.pop('use_bias'), 
         'kernel_regularizer': kwargs.pop('kernel_regularizer')}
+    filters = kwargs.pop('filters')
+    classes = kwargs.pop('classes')
 
     def block0(x, filters, kernel_size=3, stride=1, conv_shortcut=True, name=None):
         if conv_shortcut:
@@ -77,14 +77,14 @@ def ResNet20(
         include_top=True,
         input_shape=None,
         pooling=None,
-        classes=10,
-        filters=16,
         **kwargs):
 
     norm = kwargs.pop('norm')
     DEFAULT_ARGS = {
         'use_bias': kwargs.pop('use_bias'),
         'kernel_regularizer': kwargs.pop('kernel_regularizer')}
+    filters = kwargs.pop('filters')
+    classes = kwargs.pop('classes')
 
     def block0(x, filters, kernel_size=3, stride=1, conv_shortcut=True, name=None):
         if conv_shortcut:
