@@ -45,7 +45,8 @@ python main.py \
     --tensorboard \
     --tb_interval 10 \
     --tb_histogram 10 \
-    --gpu 0
+    --gpu 0 \
+    --resume 
 ```
 
 ## Evaluation

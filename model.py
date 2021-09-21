@@ -64,6 +64,8 @@ class SimSiam(Model):
             pooling='avg',
             **DEFAULT_ARGS if self.args.backbone == 'resnet18' or self.args.backbone == 'resnet20' else {})
         DEFAULT_ARGS.pop('norm')
+        DEFAULT_ARGS.pop('filters')
+        DEFAULT_ARGS.pop('classes')
 
         x = backbone.output
         outputs = []
