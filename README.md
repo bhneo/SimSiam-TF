@@ -79,7 +79,8 @@ python main.py \
     --tb_interval 10 \
     --tb_histogram 10 \
     --gpu 0 \
-    --freeze
+    --freeze \
+    --pred_layer proj_fc3
 ```
 
 ## Results

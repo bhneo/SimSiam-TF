@@ -33,7 +33,8 @@ def set_lincls(args, backbone):
     if args.freeze:
         backbone.trainable = False
         
-    x = backbone.get_layer(name='avg_pool').output
+    # x = backbone.get_layer(name='avg_pool').output
+    x = backbone.get_layer(name=args.pred_layer).output
     x = _dense(**DEFAULT_ARGS)(args.classes, name='predictions')(x)
     model = Model(backbone.input, x, name='lincls')
     return model
