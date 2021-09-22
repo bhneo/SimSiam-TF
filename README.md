@@ -38,7 +38,7 @@ python main.py \
     --backbone resnet18 \
     --img_size 32 \
     --classes 10 \
-    --filters 32 \
+    --filters 64 \
     --evaluate  \
     --checkpoint  \
     --history  \
@@ -46,7 +46,10 @@ python main.py \
     --tb_interval 10 \
     --tb_histogram 10 \
     --gpu 0 \
-    --resume 
+    --resume \
+    --proj_dim 512 \
+    --pred_dim 512 \
+    --stamp 210922_Wed_10_59_34
 ```
 
 ## Evaluation
@@ -75,6 +78,7 @@ python main.py \
     --backbone resnet18 \
     --img_size 32 \
     --classes 10 \
+    --filters 32 \
     --evaluate  \
     --checkpoint  \
     --history  \

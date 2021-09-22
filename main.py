@@ -147,6 +147,8 @@ def main():
             args.lr = 1.8 * float(args.batch_size / 256)
 
     args, initial_epoch = search_same(args)
+    print(initial_epoch)
+
     if initial_epoch == -1:
         # training was already finished!
         return
